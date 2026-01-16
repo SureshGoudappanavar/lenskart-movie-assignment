@@ -32,7 +32,7 @@ A Flutter movie/TV show application built for the Lenskart Mobile Dev Assignment
 ## 🛠️ Tech Stack
 
 - **Framework:** Flutter (Dart)
-- **API:** TVMaze API (No API key required)
+- **API:** TMDB (The Movie Database)
 - **State Management:** Provider
 - **Local Storage:** SharedPreferences
 - **Notifications:** flutter_local_notifications

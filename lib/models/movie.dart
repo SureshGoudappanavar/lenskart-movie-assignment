@@ -6,7 +6,7 @@ class Movie {
   final String backdropPath;
   final String releaseDate;
   final double voteAverage;
-  final List<String> genres;
+  final List<int> genreIds;
 
   Movie({
     required this.id,
@@ -16,50 +16,68 @@ class Movie {
     required this.backdropPath,
     required this.releaseDate,
     required this.voteAverage,
-    required this.genres,
+    required this.genreIds,
   });
 
-  factory Movie.fromTVMazeJson(Map<String, dynamic> json) {
-    final show = json['show'] ?? json;
-    final image = show['image'] as Map<String, dynamic>?;
-    final rating = show['rating'] as Map<String, dynamic>?;
-    final genres = show['genres'] as List<dynamic>? ?? [];
-
+  // Factory constructor for TMDB JSON
+  factory Movie.fromTMDBJson(Map<String, dynamic> json) {
     return Movie(
-      id: show['id'] ?? 0,
-      title: show['name'] ?? '',
-      overview: _stripHtmlTags(show['summary'] ?? ''),
-      posterPath: image?['medium'] ?? '',
-      backdropPath: image?['original'] ?? '',
-      releaseDate: show['premiered'] ?? '',
-      voteAverage: (rating?['average'] ?? 0).toDouble(),
-      genres: genres.map((g) => g.toString()).toList(),
+      id: json['id'] ?? 0,
+      title: json['title'] ?? json['name'] ?? '',
+      overview: json['overview'] ?? '',
+      posterPath: json['poster_path'] ?? '',
+      backdropPath: json['backdrop_path'] ?? '',
+      releaseDate: json['release_date'] ?? json['first_air_date'] ?? '',
+      voteAverage: (json['vote_average'] ?? 0).toDouble(),
+      genreIds: List<int>.from(json['genre_ids'] ?? []),
     );
   }
 
-  static String _stripHtmlTags(String htmlString) {
-    return htmlString
-        .replaceAll(RegExp(r'<[^>]*>'), '')
-        .replaceAll('&amp;', '&')
-        .replaceAll('&lt;', '<')
-        .replaceAll('&gt;', '>')
-        .replaceAll('&quot;', '"')
-        .replaceAll('&#39;', "'")
-        .trim();
-  }
-
+  // Convert Movie to JSON (for storage)
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'name': title,
-      'summary': overview,
-      'image': {'medium': posterPath, 'original': backdropPath},
-      'premiered': releaseDate,
-      'rating': {'average': voteAverage},
-      'genres': genres,
+      'title': title,
+      'overview': overview,
+      'poster_path': posterPath,
+      'backdrop_path': backdropPath,
+      'release_date': releaseDate,
+      'vote_average': voteAverage,
+      'genre_ids': genreIds,
     };
   }
 
-  String get fullPosterPath => posterPath;
-  String get fullBackdropPath => backdropPath;
+  // Full image URLs
+  String get fullPosterPath => posterPath.isNotEmpty
+      ? 'https://image.tmdb.org/t/p/w500$posterPath'
+      : '';
+
+  String get fullBackdropPath => backdropPath.isNotEmpty
+      ? 'https://image.tmdb.org/t/p/original$backdropPath'
+      : '';
+
+  // Get genre names from IDs
+  List<String> get genres => genreIds.map((id) => _genreMap[id] ?? 'Unknown').toList();
+
+  static const Map<int, String> _genreMap = {
+    28: 'Action',
+    12: 'Adventure',
+    16: 'Animation',
+    35: 'Comedy',
+    80: 'Crime',
+    99: 'Documentary',
+    18: 'Drama',
+    10751: 'Family',
+    14: 'Fantasy',
+    36: 'History',
+    27: 'Horror',
+    10402: 'Music',
+    9648: 'Mystery',
+    10749: 'Romance',
+    878: 'Science Fiction',
+    10770: 'TV Movie',
+    53: 'Thriller',
+    10752: 'War',
+    37: 'Western',
+  };
 }

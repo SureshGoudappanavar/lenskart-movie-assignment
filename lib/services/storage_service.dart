@@ -12,7 +12,7 @@ class StorageService {
     if (data == null) return [];
 
     final List decoded = json.decode(data);
-    return decoded.map((item) => Movie.fromTVMazeJson(item)).toList();
+    return decoded.map((item) => Movie.fromTMDBJson(item)).toList();
   }
 
   static Future<void> saveFavorites(List<Movie> movies) async {
@@ -27,7 +27,7 @@ class StorageService {
     if (data == null) return [];
 
     final List decoded = json.decode(data);
-    return decoded.map((item) => Movie.fromTVMazeJson(item)).toList();
+    return decoded.map((item) => Movie.fromTMDBJson(item)).toList();
   }
 
   static Future<void> saveWatchlist(List<Movie> movies) async {
