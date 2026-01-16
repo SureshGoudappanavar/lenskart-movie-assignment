@@ -1,14 +1,27 @@
 # Lenskart Movie Assignment
 
-A Flutter movie/TV show application built for the Lenskart Mobile Dev Assignment using TVMaze API.
+A Flutter movie application built for the Lenskart Mobile Dev Assignment using TMDB API.
+
+## � API Note
+
+> Initially, the TMDB API was not working due to API key registration delays, so I temporarily used TVMaze API as an alternative. Now that TMDB is working, the app has been updated to use **TMDB (The Movie Database)** as specified in the assignment requirements.
+
+## 📱 Download APK
+
+**Pre-built APK available at:** `build/app/outputs/flutter-apk/app-release.apk`
+
+Or build it yourself:
+```bash
+flutter build apk --release
+```
 
 ## 📱 Features
 
 ### Core Features
 - **Splash Screen** - Animated logo with smooth transitions
 - **Bottom Navigation** - Movies (landing), Favourites, Watchlist
-- **Movies Screen** - Browse shows with images, names, and genre cards
-- **Search** - Search for movies/shows on the same screen
+- **Movies Screen** - Browse movies with images, names, and genre cards
+- **Search** - Search for movies on the same screen
 - **Favourites** - User's favourite list (unique per user, persisted locally)
 - **Watchlist** - Movies to watch later (unique per user, persisted locally)
 
@@ -23,7 +36,7 @@ A Flutter movie/TV show application built for the Lenskart Mobile Dev Assignment
 
 ### UI/UX Features
 - Featured Hero Card with auto-sliding (3 sec interval)
-- Thumbnail selector for featured shows
+- Thumbnail selector for featured movies
 - Responsive layout (Desktop, Tablet, Mobile)
 - Loading, Empty, and Error states
 - Dark theme with Material Design 3
@@ -37,7 +50,7 @@ A Flutter movie/TV show application built for the Lenskart Mobile Dev Assignment
 - **Local Storage:** SharedPreferences
 - **Notifications:** flutter_local_notifications
 
-## 📦 Dependencies
+## � Dependencies
 
 ```yaml
 dependencies:
@@ -49,14 +62,14 @@ dependencies:
   percent_indicator: ^4.2.3
 ```
 
-## 🚀 Setup & Run
+## � Setup & Run
 
 ```bash
 # Clone the repository
 git clone https://github.com/SureshGoudappanavar/lenskart-movie-assignment.git
 
 # Navigate to project
-cd lenskart-movie-assignment/movie_app
+cd lenskart-movie-assignment
 
 # Install dependencies
 flutter pub get
@@ -64,14 +77,6 @@ flutter pub get
 # Run the app
 flutter run
 ```
-
-## 📱 Build APK
-
-```bash
-flutter build apk --release
-```
-
-APK location: `build/app/outputs/flutter-apk/app-release.apk`
 
 ## 📁 Project Structure
 
@@ -104,6 +109,7 @@ movie_app/
 ├── android/
 ├── ios/
 ├── web/
+├── build/app/outputs/flutter-apk/app-release.apk  ← APK FILE
 └── pubspec.yaml
 ```
 
@@ -131,7 +137,7 @@ movie_app/
 
 ### Desktop View
 - Featured hero card on left with auto-sliding
-- Popular shows grid on right
+- Popular movies grid on right
 
 ### Mobile View
 - Vertical scroll layout
