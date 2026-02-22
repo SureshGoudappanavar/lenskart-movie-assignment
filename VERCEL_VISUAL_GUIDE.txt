@@ -1,0 +1,343 @@
+═══════════════════════════════════════════════════════════════════════════
+                    VERCEL DEPLOYMENT - VISUAL GUIDE
+                    Step-by-Step with Screenshots Description
+═══════════════════════════════════════════════════════════════════════════
+
+This guide describes what you'll see on each screen during deployment.
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 1: OPEN VERCEL WEBSITE
+═══════════════════════════════════════════════════════════════════════════
+
+🌐 Go to: https://vercel.com
+
+WHAT YOU'LL SEE:
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│                         VERCEL                                          │
+│                                                                         │
+│         Develop. Preview. Ship.                                         │
+│         For the best frontend teams                                     │
+│                                                                         │
+│         [Sign Up]  [Login]                                              │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+ACTION: Click "Sign Up" or "Login"
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 2: LOGIN WITH GITHUB
+═══════════════════════════════════════════════════════════════════════════
+
+WHAT YOU'LL SEE:
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│                    Welcome to Vercel                                    │
+│                                                                         │
+│         [Continue with GitHub]                                          │
+│         [Continue with GitLab]                                          │
+│         [Continue with Bitbucket]                                       │
+│         [Continue with Email]                                           │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+ACTION: Click "Continue with GitHub"
+
+NEXT SCREEN (GitHub Authorization):
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│                    Authorize Vercel                                     │
+│                                                                         │
+│         Vercel by Vercel would like permission to:                      │
+│         • Read your user profile                                        │
+│         • Access your repositories                                      │
+│                                                                         │
+│         [Authorize vercel]                                              │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+ACTION: Click "Authorize vercel"
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 3: VERCEL DASHBOARD
+═══════════════════════════════════════════════════════════════════════════
+
+WHAT YOU'LL SEE:
+┌─────────────────────────────────────────────────────────────────────────┐
+│  Vercel                                    [Your Name] ▼                │
+│  ─────────────────────────────────────────────────────────────────────  │
+│                                                                         │
+│  Overview    Projects    Storage    Settings                           │
+│                                                                         │
+│  [Add New... ▼]                                                         │
+│                                                                         │
+│  Your Projects                                                          │
+│  ─────────────────────────────────────────────────────────────────────  │
+│  (Empty or existing projects)                                           │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+ACTION: Click "Add New..." dropdown button
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 4: ADD NEW PROJECT
+═══════════════════════════════════════════════════════════════════════════
+
+WHAT YOU'LL SEE (Dropdown Menu):
+┌─────────────────────────────────────────────────────────────────────────┐
+│  [Add New... ▼]                                                         │
+│  ┌──────────────┐                                                       │
+│  │ Project      │ ← Click this                                          │
+│  │ Team         │                                                        │
+│  │ Domain       │                                                        │
+│  └──────────────┘                                                       │
+└─────────────────────────────────────────────────────────────────────────┘
+
+ACTION: Click "Project"
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 5: IMPORT GIT REPOSITORY
+═══════════════════════════════════════════════════════════════════════════
+
+WHAT YOU'LL SEE:
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│  Import Git Repository                                                  │
+│  ─────────────────────────────────────────────────────────────────────  │
+│                                                                         │
+│  Search repositories...                                                 │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │ 🔍 [Search box]                                                  │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+│  Your GitHub Repositories:                                              │
+│  ─────────────────────────────────────────────────────────────────────  │
+│                                                                         │
+│  📁 SureshGoudappanavar/lenskart-movie-assignment    [Import]           │
+│  📁 SureshGoudappanavar/other-repo                   [Import]           │
+│  📁 SureshGoudappanavar/another-repo                 [Import]           │
+│                                                                         │
+│  [Adjust GitHub App Permissions →]                                      │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+ACTION: Find "lenskart-movie-assignment" and click "Import" button
+
+NOTE: If you don't see your repository, click "Adjust GitHub App Permissions"
+      and grant Vercel access to your repositories.
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 6: CONFIGURE PROJECT (MOST IMPORTANT!)
+═══════════════════════════════════════════════════════════════════════════
+
+WHAT YOU'LL SEE:
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│  Configure Project                                                      │
+│  ─────────────────────────────────────────────────────────────────────  │
+│                                                                         │
+│  Project Name:                                                          │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │ lenskart-movie-assignment                                        │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+│  Framework Preset:                                                      │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │ Other ▼                                                          │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+│  Root Directory:                                                        │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │ ./                                                        [Edit] │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+│  Build and Output Settings                                              │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │ Build Command:                                                   │   │
+│  │ [flutter build web --release]                                    │   │
+│  │                                                                  │   │
+│  │ Output Directory:                                                │   │
+│  │ [build/web]                                                      │   │
+│  │                                                                  │   │
+│  │ Install Command:                                                 │   │
+│  │ [                                                              ] │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+│  Environment Variables (Optional)                                       │
+│  [+ Add]                                                                │
+│                                                                         │
+│  [Deploy]                                                               │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+⚠️ CRITICAL CONFIGURATION:
+────────────────────────────────────────────────────────────────────────────
+
+1. Click [Edit] next to "Root Directory"
+2. Change from "./" to "movie_app"
+3. Verify Build Command: flutter build web --release
+4. Verify Output Directory: build/web
+
+YOUR SETTINGS SHOULD LOOK LIKE THIS:
+┌─────────────────────────────────────────────────────────────────────────┐
+│ Root Directory:      movie_app                                          │
+│ Build Command:       flutter build web --release                        │
+│ Output Directory:    build/web                                          │
+└─────────────────────────────────────────────────────────────────────────┘
+
+ACTION: Click "Deploy" button
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 7: DEPLOYMENT IN PROGRESS
+═══════════════════════════════════════════════════════════════════════════
+
+WHAT YOU'LL SEE:
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│  Building...                                                            │
+│  ─────────────────────────────────────────────────────────────────────  │
+│                                                                         │
+│  ⏳ Queued                                                              │
+│  ⏳ Initializing                                                        │
+│  🔄 Building (2-5 minutes)                                              │
+│                                                                         │
+│  Build Logs:                                                            │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │ [12:34:56] Cloning repository...                                 │   │
+│  │ [12:35:01] Installing dependencies...                            │   │
+│  │ [12:35:15] Running build command...                              │   │
+│  │ [12:35:20] flutter build web --release                           │   │
+│  │ [12:36:45] Building web application...                           │   │
+│  │ [12:38:12] Build completed successfully!                         │   │
+│  │ [12:38:15] Deploying to Vercel...                                │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+WAIT: This usually takes 2-5 minutes. Don't close the page!
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 8: DEPLOYMENT SUCCESS! 🎉
+═══════════════════════════════════════════════════════════════════════════
+
+WHAT YOU'LL SEE:
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│  🎉 Congratulations!                                                    │
+│  ─────────────────────────────────────────────────────────────────────  │
+│                                                                         │
+│  Your project has been deployed!                                        │
+│                                                                         │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │                                                                  │   │
+│  │  🌐 https://lenskart-movie-assignment.vercel.app                 │   │
+│  │                                                                  │   │
+│  │  [Visit] [Copy URL]                                              │   │
+│  │                                                                  │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+│  Production Deployment                                                  │
+│  Status: Ready                                                          │
+│  Domain: lenskart-movie-assignment.vercel.app                           │
+│                                                                         │
+│  [View Deployment] [Go to Dashboard]                                    │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+ACTION: Click "Visit" to open your live app!
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 9: YOUR APP IS LIVE!
+═══════════════════════════════════════════════════════════════════════════
+
+WHAT YOU'LL SEE (Your App Running):
+┌─────────────────────────────────────────────────────────────────────────┐
+│  https://lenskart-movie-assignment.vercel.app                           │
+│  ─────────────────────────────────────────────────────────────────────  │
+│                                                                         │
+│  [Your Flutter Movie App Splash Screen]                                 │
+│                                                                         │
+│  ⏳ Loading...                                                          │
+│                                                                         │
+│  Then → Movies Screen with Hero Card and Movie Grid                     │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+✅ SUCCESS! Your app is now live on the internet!
+
+═══════════════════════════════════════════════════════════════════════════
+WHAT TO DO NEXT
+═══════════════════════════════════════════════════════════════════════════
+
+1. ✅ Copy your deployment URL
+2. ✅ Test all features:
+   - Movies screen loads
+   - Search works
+   - Movie details open
+   - Favorites and Watchlist work
+   - Hero card auto-slides
+3. ✅ Share the URL with your assignment
+4. ✅ Update README.md with the live URL
+
+═══════════════════════════════════════════════════════════════════════════
+AUTOMATIC DEPLOYMENTS
+═══════════════════════════════════════════════════════════════════════════
+
+After the first deployment, Vercel automatically deploys when you push to GitHub:
+
+1. Make changes to your code
+2. Commit and push to GitHub:
+   git add .
+   git commit -m "Update feature"
+   git push origin main
+3. Vercel automatically detects the push and redeploys!
+4. Check your Vercel dashboard to see the new deployment
+
+═══════════════════════════════════════════════════════════════════════════
+TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════════════
+
+PROBLEM: Build fails with "Flutter not found"
+SOLUTION: Vercel might not have Flutter installed. Try the drag & drop method:
+          1. Go to https://vercel.com/new
+          2. Drag your "build/web" folder
+          3. Drop it on the page
+          4. Instant deployment!
+
+PROBLEM: 404 errors on routes
+SOLUTION: Already fixed! Your vercel.json has the correct rewrites.
+
+PROBLEM: Can't find repository
+SOLUTION: Click "Adjust GitHub App Permissions" and grant access.
+
+PROBLEM: Root directory error
+SOLUTION: Make sure you set Root Directory to "movie_app" (not "./")
+
+═══════════════════════════════════════════════════════════════════════════
+ALTERNATIVE: DRAG & DROP METHOD (EASIEST!)
+═══════════════════════════════════════════════════════════════════════════
+
+If the above method seems complicated, use this super simple method:
+
+STEP 1: Open File Explorer
+────────────────────────────────────────────────────────────────────────────
+Navigate to:
+C:\Users\Suresh Goudappanavar\OneDrive\Desktop\Lenskart_movie_app\movie_app\build\web
+
+STEP 2: Open Vercel
+────────────────────────────────────────────────────────────────────────────
+Go to: https://vercel.com/new
+
+STEP 3: Drag & Drop
+────────────────────────────────────────────────────────────────────────────
+Drag the "web" folder from File Explorer and drop it on the Vercel page.
+
+STEP 4: Done!
+────────────────────────────────────────────────────────────────────────────
+Vercel will instantly deploy your app and give you a URL!
+
+═══════════════════════════════════════════════════════════════════════════
+
+That's it! Your Flutter movie app is now live on the internet! 🚀
+
+═══════════════════════════════════════════════════════════════════════════
