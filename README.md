@@ -6,6 +6,10 @@ A Flutter movie application built for the Lenskart Mobile Dev Assignment using T
 
 > Initially, the TMDB API was not working due to API key registration delays, so I temporarily used TVMaze API as an alternative. Now that TMDB is working, the app has been updated to use **TMDB (The Movie Database)** as specified in the assignment requirements.
 
+## 🌐 Live Demo
+
+**Deployed on Vercel:** Coming soon! (Follow VERCEL_DEPLOYMENT_GUIDE.txt for deployment steps)
+
 ## 📱 Download APK
 
 **Pre-built APK available at:** `build/app/outputs/flutter-apk/app-release.apk`
@@ -143,6 +147,20 @@ movie_app/
 - Vertical scroll layout
 - Hero card with thumbnail selector
 - Horizontal scrolling category rows
+
+## 🚀 Deployment
+
+### Web Deployment (Vercel)
+This app can be deployed to Vercel as a static web app. See `VERCEL_DEPLOYMENT_GUIDE.txt` for detailed step-by-step instructions.
+
+Quick steps:
+1. Go to [vercel.com](https://vercel.com)
+2. Import GitHub repository
+3. Set Root Directory to `movie_app`
+4. Deploy!
+
+### Android APK
+Pre-built APK is available at: `build/app/outputs/flutter-apk/app-release.apk`
 
 ## 👤 Author
 

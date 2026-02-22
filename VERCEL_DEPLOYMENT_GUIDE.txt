@@ -1,0 +1,217 @@
+═══════════════════════════════════════════════════════════════════════════
+                    VERCEL DEPLOYMENT GUIDE
+                    Flutter Movie App
+═══════════════════════════════════════════════════════════════════════════
+
+✅ YES, YOU CAN DEPLOY THIS FLUTTER APP TO VERCEL!
+
+Flutter web apps can be deployed to Vercel as static sites. Your project is 
+already configured and ready to deploy.
+
+═══════════════════════════════════════════════════════════════════════════
+                    STEP-BY-STEP DEPLOYMENT PROCESS
+═══════════════════════════════════════════════════════════════════════════
+
+STEP 1: GO TO VERCEL WEBSITE
+────────────────────────────────────────────────────────────────────────────
+1. Open your browser and go to: https://vercel.com
+2. Click "Sign Up" or "Login"
+3. Choose "Continue with GitHub" (recommended)
+4. Authorize Vercel to access your GitHub account
+
+STEP 2: IMPORT YOUR PROJECT
+────────────────────────────────────────────────────────────────────────────
+1. After logging in, click "Add New..." button
+2. Select "Project"
+3. You'll see "Import Git Repository" section
+4. Find your repository: "lenskart-movie-assignment"
+   (If you don't see it, click "Adjust GitHub App Permissions" and grant access)
+5. Click "Import" next to your repository
+
+STEP 3: CONFIGURE PROJECT (IMPORTANT!)
+────────────────────────────────────────────────────────────────────────────
+Vercel will show a configuration screen. Set these values:
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ Framework Preset:        Other (or leave as detected)                   │
+│ Root Directory:          ./movie_app                                    │
+│ Build Command:           flutter build web --release                    │
+│ Output Directory:        build/web                                      │
+│ Install Command:         (leave default or empty)                       │
+└─────────────────────────────────────────────────────────────────────────┘
+
+IMPORTANT NOTES:
+- Make sure "Root Directory" is set to "movie_app" (not the repository root)
+- The build command and output directory are already configured in vercel.json
+- Vercel will automatically detect Flutter if you have the correct setup
+
+STEP 4: DEPLOY
+────────────────────────────────────────────────────────────────────────────
+1. Click "Deploy" button
+2. Wait for the build process (usually 2-5 minutes)
+3. Vercel will:
+   - Clone your repository
+   - Install Flutter dependencies
+   - Run: flutter build web --release
+   - Deploy the build/web folder
+
+STEP 5: ACCESS YOUR DEPLOYED APP
+────────────────────────────────────────────────────────────────────────────
+1. Once deployment is complete, you'll see a success screen
+2. Vercel will provide you with a URL like:
+   https://lenskart-movie-assignment.vercel.app
+   or
+   https://lenskart-movie-assignment-[random].vercel.app
+
+3. Click the URL to open your live app!
+
+═══════════════════════════════════════════════════════════════════════════
+                    TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════════════
+
+ISSUE 1: Build Fails - Flutter Not Found
+────────────────────────────────────────────────────────────────────────────
+SOLUTION: Vercel needs Flutter installed. Add this to your vercel.json:
+
+{
+  "builds": [
+    {
+      "src": "pubspec.yaml",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build/web"
+      }
+    }
+  ]
+}
+
+ISSUE 2: Root Directory Error
+────────────────────────────────────────────────────────────────────────────
+SOLUTION: Make sure you set Root Directory to "movie_app" in Vercel settings
+
+ISSUE 3: 404 Errors on Routes
+────────────────────────────────────────────────────────────────────────────
+SOLUTION: Already fixed! Your vercel.json has rewrites configured to handle
+Flutter routing.
+
+ISSUE 4: API Key Not Working
+────────────────────────────────────────────────────────────────────────────
+SOLUTION: The TMDB API key is hardcoded in the app. For production, you 
+should use environment variables, but for this assignment, it's fine.
+
+═══════════════════════════════════════════════════════════════════════════
+                    ALTERNATIVE: MANUAL DEPLOYMENT
+═══════════════════════════════════════════════════════════════════════════
+
+If automatic deployment doesn't work, you can deploy manually:
+
+METHOD 1: Using Vercel CLI
+────────────────────────────────────────────────────────────────────────────
+1. Install Vercel CLI:
+   npm install -g vercel
+
+2. Navigate to your project:
+   cd movie_app
+
+3. Build the web app:
+   flutter build web --release
+
+4. Deploy:
+   vercel --prod
+
+5. Follow the prompts and your app will be deployed!
+
+METHOD 2: Drag & Drop (Simplest!)
+────────────────────────────────────────────────────────────────────────────
+1. Go to https://vercel.com/new
+2. Click "Browse" or drag the "build/web" folder
+3. Drop the folder and Vercel will deploy it instantly!
+
+═══════════════════════════════════════════════════════════════════════════
+                    WHAT'S ALREADY CONFIGURED
+═══════════════════════════════════════════════════════════════════════════
+
+✅ vercel.json - Configuration file with:
+   - Build command: flutter build web --release
+   - Output directory: build/web
+   - Rewrites for Flutter routing
+
+✅ .vercelignore - Excludes unnecessary files:
+   - Platform-specific folders (android, ios, etc.)
+   - Build artifacts
+   - Test files
+
+✅ Web build - Already built and ready in build/web/
+
+✅ GitHub repository - Code is pushed and ready to import
+
+═══════════════════════════════════════════════════════════════════════════
+                    EXPECTED DEPLOYMENT URL
+═══════════════════════════════════════════════════════════════════════════
+
+Your app will be available at:
+https://lenskart-movie-assignment.vercel.app
+
+Or a similar URL with a random suffix if the name is taken.
+
+═══════════════════════════════════════════════════════════════════════════
+                    AFTER DEPLOYMENT
+═══════════════════════════════════════════════════════════════════════════
+
+1. Test all features:
+   ✓ Movies screen loads
+   ✓ Search works
+   ✓ Movie details open
+   ✓ Favorites and Watchlist work
+   ✓ Hero card auto-slides
+
+2. Share the URL:
+   - Add it to your README.md
+   - Include it in your assignment submission
+   - Test on different devices
+
+3. Update README with deployment URL:
+   Add this section to README.md:
+
+   ## 🌐 Live Demo
+   
+   **Deployed on Vercel:** https://your-app-url.vercel.app
+
+═══════════════════════════════════════════════════════════════════════════
+                    IMPORTANT NOTES
+═══════════════════════════════════════════════════════════════════════════
+
+📌 CORS Issues: TMDB API should work fine from web, but if you face CORS 
+   issues, you might need to use a proxy or backend service.
+
+📌 Local Storage: SharedPreferences works on web using browser localStorage,
+   so favorites and watchlist will persist per browser.
+
+📌 Notifications: Web notifications work differently than mobile. The 
+   flutter_local_notifications plugin may not work on web. Consider using
+   browser notifications or a simple snackbar for web.
+
+📌 Performance: Web builds are larger than mobile apps. First load might
+   take a few seconds.
+
+📌 Free Tier: Vercel's free tier is perfect for this project. No credit
+   card required!
+
+═══════════════════════════════════════════════════════════════════════════
+                    QUICK REFERENCE
+═══════════════════════════════════════════════════════════════════════════
+
+Repository:  https://github.com/SureshGoudappanavar/lenskart-movie-assignment
+Vercel:      https://vercel.com
+Build Cmd:   flutter build web --release
+Output Dir:  build/web
+Root Dir:    movie_app
+
+═══════════════════════════════════════════════════════════════════════════
+
+Good luck with your deployment! 🚀
+
+If you face any issues, check the Vercel deployment logs for detailed error
+messages.
+
+═══════════════════════════════════════════════════════════════════════════
