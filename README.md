@@ -2,9 +2,9 @@
 
 A Flutter movie application built for the Lenskart Mobile Dev Assignment using TMDB API.
 
-## � API Note
+## 📡 API Note
 
-> Initially, the TMDB API was not working due to API key registration delays, so I temporarily used TVMaze API as an alternative. Now that TMDB is working, the app has been updated to use **TMDB (The Movie Database)** as specified in the assignment requirements.
+> This app uses **TVMaze API** which is completely free and requires no API key. TVMaze provides comprehensive TV show data with reliable uptime and no rate limiting for basic usage.
 
 ## 🌐 Live Demo
 
@@ -49,7 +49,7 @@ flutter build apk --release
 ## 🛠️ Tech Stack
 
 - **Framework:** Flutter (Dart)
-- **API:** TMDB (The Movie Database)
+- **API:** TVMaze API (Free, no API key required)
 - **State Management:** Provider
 - **Local Storage:** SharedPreferences
 - **Notifications:** flutter_local_notifications
